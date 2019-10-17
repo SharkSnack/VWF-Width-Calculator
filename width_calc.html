@@ -1,0 +1,28 @@
+<!doctype HTML>
+<html>
+<head>
+  <title>VWF Width Calculator</title>
+  <meta charset="utf-8">
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="width_calc.css">
+  <script type="text/javascript" src="width_calc.js"></script>
+</head>
+<body>
+  <div>
+    <p>VWF Width File:</p>
+    <input type="file" id="width_file" onchange="handleFile(this.files[0])">
+  </div>
+  <div>
+    <p>Test:</p>
+    <textarea id="test" cols=56 rows=10 onkeyup="calc_width()"></textarea>
+  </div>
+  <div>
+    <p>Result:</p>
+    <div id="result"></div>
+  </div>
+</body>
+</html>
