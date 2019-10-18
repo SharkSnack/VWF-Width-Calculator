@@ -23,12 +23,23 @@ function make_lookup_object (text_from_file) {
 
 // calculates width of textarea and updates result
 function calc_width () {
+  var lines = test.value.split('\n');
+  var widths = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    widths.push( calc_line( lines[i] ) );
+  }
+  result.innerHTML = "<pre>" + widths.join('\n') + "</pre>";
+}
+
+// calculate width of a line of text
+function calc_line (line) {
   var width = 0;
 
-  for (let i = 0; i < test.value.length; i++) {
-    width = width + window.lookup[test.value[i]];
+  for (let i = 0; i < line.length; i++) {
+    width = width + window.lookup[line[i]];
   }
-  result.innerHTML = width;
+  return width;
 }
 
 $(document).ready(function() {
