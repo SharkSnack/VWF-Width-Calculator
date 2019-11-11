@@ -16,7 +16,11 @@ function make_lookup_object (text_from_file) {
   var lookup = {};
 
   for (let i = 0; i < text_array.length; i++) {
-    lookup[text_array[i].charAt(0)] = Number(text_array[i].split('=')[1]);
+    if (text_array[i].charAt(0) === '=') {
+      lookup[text_array[i].charAt(0)] = Number(text_array[i].split('=')[2]);
+    } else {
+      lookup[text_array[i].charAt(0)] = Number(text_array[i].split('=')[1]);
+    }
   }
   return lookup;
 }
