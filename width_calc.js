@@ -47,6 +47,11 @@ function calc_line (line) {
 }
 
 $(document).ready(function() {
-  var test = $("#test");
-  var result = $("#result");
+  // display character count of "test" textarea
+  const text_area = document.querySelector("#test");
+
+  text_area.addEventListener("input", event => {
+    const target = event.currentTarget;
+    document.querySelector("#character_count").innerHTML = `( ${target.value.length} chars )`;
+  });
 });
